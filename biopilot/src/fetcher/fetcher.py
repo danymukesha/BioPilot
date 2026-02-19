@@ -13,6 +13,7 @@ from dataclasses import dataclass, asdict
 import urllib.request
 import urllib.error
 import xml.etree.ElementTree as ET
+import urllib.parse
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -68,9 +69,9 @@ class DatasetFetcher:
         
         full_url = url
         if params:
-            param_str = "&".join(f"{k}={v}" for k, v in params.items())
-            full_url = f"{url}?{param_str}"
-        
+            #param_str = "&".join(f"{k}={v}" for k, v in params.items())
+            #full_url = f"{url}?{param_str}"
+            full_url = f"{url}?{urllib.parse.urlencode(params)}"
         cache_key = hashlib.md5(full_url.encode()).hexdigest()
         cache_file = self.cache_dir / f"{cache_key}.txt"
         
