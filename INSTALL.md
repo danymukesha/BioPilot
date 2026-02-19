@@ -46,3 +46,26 @@ biopilot/
     ├── dashboard/     # Streamlit dashboard
     └── reproducibility/  # Reproducibility logger
 ```
+
+OR 
+
+```
+biopilot/
+├── data/           # Raw, processed, metadata subdirectories
+├── results/        # figures, tables, reports, pipelines
+├── notebooks/      # Jupyter notebooks
+├── scripts/        # Analysis scripts
+├── logs/           # Command history, environment snapshots
+├── env/            # requirements.txt, environment.yml
+├── src/
+│   ├── fetcher/    # GEO/NCBI/ENA data fetcher
+│   ├── annotation/ # SQLite metadata database
+│   ├── pipeline/   # Snakemake/Nextflow manager
+│   ├── analyzer/   # Normalization, PCA, DE analysis
+│   ├── dashboard/  # Streamlit web interface
+│   └── reproducibility/ # Command/version logging
+├── tests/          # pytest test suite
+├── cli.py          # Command-line interface
+└── pyproject.toml  # Package configuration
+```
+

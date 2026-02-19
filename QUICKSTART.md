@@ -93,3 +93,18 @@ biopilot analyze pca -i results/tables/analysis_xxx.csv
 biopilot analyze de -i results/tables/analysis_xxx.csv --group1 treated1,treated2 --group2 control1,control2
 biopilot dashboard
 ```
+
+CLI commands
+
+```bash
+biopilot search "RNA-seq human cancer" --database geo
+biopilot download SRR123456 --source sra
+biopilot add-sample --sample-id s1 --species "Homo sapiens" --tissue liver
+biopilot list --species "Homo sapiens"
+biopilot analyze normalize -i expression.tsv --method cpm
+biopilot analyze pca -i normalized.tsv
+biopilot analyze de -i normalized.tsv --group1 treated1,treated2 --group2 ctrl1,ctrl2
+biopilot dashboard --port 8501
+biopilot env capture
+```
+
