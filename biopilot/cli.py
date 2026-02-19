@@ -217,6 +217,7 @@ def cmd_dashboard(args):
         cmd.extend(["--server.headless", "true"])
     
     print(f"Starting dashboard on port {args.port}...")
+    print("Running command:", cmd)
     subprocess.run(cmd)
 
 
